@@ -1,0 +1,13 @@
+# Google Apps Script 코드 (배포하지 않음)
+google-apps-script/
+
+# 환경 설정 (선택사항)
+.env
+
+# 시스템 파일
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
