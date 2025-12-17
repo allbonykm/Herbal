@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>올본한의원 처방 시스템</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>🌿 올본한의원</h2>
+            <p class="user-info" id="userInfo">Loading...</p>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="menu-item active" data-page="dashboard">
+                <span class="icon">🏠</span>
+                <span class="text">대시보드</span>
+            </li>
+
+            <li class="menu-section">
+                <span class="section-title">처방 관리</span>
+            </li>
+            <li class="menu-item" data-page="prescription">
+                <span class="icon">📝</span>
+                <span class="text">새 처방 작성</span>
+            </li>
+            <li class="menu-item" data-page="prescription-list">
+                <span class="icon">📋</span>
+                <span class="text">처방 조회</span>
+            </li>
+            <li class="menu-item" data-page="guide-print">
+                <span class="icon">🖨️</span>
+                <span class="text">안내문 출력</span>
+            </li>
+
+            <li class="menu-section">
+                <span class="section-title">재고 관리</span>
+            </li>
+            <li class="menu-item" data-page="stock">
+                <span class="icon">📦</span>
+                <span class="text">재고 현황</span>
+            </li>
+            <li class="menu-item" data-page="incoming">
+                <span class="icon">📥</span>
+                <span class="text">입고 처리</span>
+            </li>
+            <li class="menu-item" data-page="io-history">
+                <span class="icon">📊</span>
+                <span class="text">입출고 내역</span>
+            </li>
+
+            <li class="menu-section">
+                <span class="section-title">빠른 처방</span>
+            </li>
+            <li class="menu-item" data-page="quick-ssanghwa">
+                <span class="icon">⚡</span>
+                <span class="text">쌍화탕</span>
+            </li>
+            <li class="menu-item" data-page="quick-boogi">
+                <span class="icon">⚡</span>
+                <span class="text">부기탕</span>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn" id="logoutBtn">
+                <span class="icon">🚪</span>
+                <span class="text">로그아웃</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="topbar">
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1 class="page-title" id="pageTitle">대시보드</h1>
+            <div class="topbar-actions">
+                <span class="datetime" id="datetime"></span>
+            </div>
+        </div>
+
+        <div class="content-wrapper" id="contentWrapper">
+            <!-- Page content will be loaded here -->
+        </div>
+    </main>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <h2>올본한의원 처방 시스템</h2>
+            <p>Google 계정으로 로그인해주세요</p>
+            <div id="g_id_onload" data-client_id="YOUR_CLIENT_ID" data-callback="handleCredentialResponse">
+            </div>
+            <div class="g_id_signin" data-type="standard"></div>
+
+            <!-- Temporary login for development -->
+            <div class="dev-login">
+                <hr>
+                <p style="font-size: 0.9em; color: #666;">개발 모드 (임시)</p>
+                <button class="btn btn-secondary" onclick="devLogin()">임시 로그인</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/data-manager.js"></script>
+    <script src="js/pages/pages.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
